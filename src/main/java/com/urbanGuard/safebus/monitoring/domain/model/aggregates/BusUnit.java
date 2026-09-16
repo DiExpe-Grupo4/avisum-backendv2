@@ -22,6 +22,7 @@ public class BusUnit {
     private String status; // ACTIVE, INACTIVE, MAINTENANCE
     private Double currentLatitude;
     private Double currentLongitude;
+    private Double currentSpeed;
     @Column(nullable = false, updatable = false) @CreatedDate
     private Instant createdAt;
     @Column(nullable = false) @LastModifiedDate
@@ -35,8 +36,9 @@ public class BusUnit {
         this.currentLatitude = command.latitude();
         this.currentLongitude = command.longitude();
     }
-    public void updateLocation(Double lat, Double lon) {
+    public void updateLocation(Double lat, Double lon, Double speed) {
         this.currentLatitude = lat;
         this.currentLongitude = lon;
+        if (speed != null) this.currentSpeed = speed;
     }
 }

@@ -6,6 +6,7 @@ import com.urbanGuard.safebus.camera.domain.model.commands.VerifyFaceCommand;
 import com.urbanGuard.safebus.camera.infrastructure.persistence.jpa.FaceVerificationRepository;
 import com.urbanGuard.safebus.iam.infrastructure.persistence.jpa.EmployeeRepository;
 import com.urbanGuard.safebus.shared.application.result.Result;
+import org.springframework.objenesis.SpringObjenesis;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ThreadLocalRandom;

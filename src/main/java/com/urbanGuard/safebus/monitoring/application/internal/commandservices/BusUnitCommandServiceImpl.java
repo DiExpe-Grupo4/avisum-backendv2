@@ -23,7 +23,7 @@ public class BusUnitCommandServiceImpl implements BusUnitCommandService {
     public Result<BusUnit, String> handle(UpdateBusLocationCommand command) {
         var bus = repo.findById(command.busUnitId());
         if (bus.isEmpty()) return Result.err("Bus no encontrado: " + command.busUnitId());
-        bus.get().updateLocation(command.latitude(), command.longitude());
+        bus.get().updateLocation(command.latitude(), command.longitude(), command.speed());
         repo.save(bus.get());
         return Result.ok(bus.get());
     }
