@@ -16,7 +16,7 @@ public class CorsConfig {
                         .allowedOriginPatterns(
                                 "http://localhost:4200",
                                 "https://avisum-frontend.vercel.app/conductor/login",
-                                "https://avisum-frontend-*.vercel.app"
+                                "https://avisum-frontend.vercel.app/"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
                         .allowedHeaders("*");
